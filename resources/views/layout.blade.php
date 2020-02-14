@@ -12,60 +12,62 @@
 
         <!-- Styles -->
         <style>
-            
-             
-            ul {
-                background-color: #FFDAB9;
-                list-style-type: none;
-                margine: 0;
-                padding: 0;
-                overflow: hidden;
+            header{
+                height: 75px;
+                background-color: #006F84;
+                border: 0;
+                /*position: fixed;*/
+                width: 100%;
+                z-index: 9999;
+                top: 0;
+                left: 0;                
             }
-            li { float: left; }
-            li a {
+            h1{
+                color: white;
+                line-height: 75 px;
+                float : left;                
+            }
+
+            .wrrapper{
+                width: 1170 px;
+                margin: 0 auto;
+            }
+            .clearfix{
+                content: '';
                 display: block;
-                background-color: #FFDAB9;
-                color: #000000;
-                padding: 8px;
-                text-decoration: none;
-                text-align: center;
-                font-weight: bold;
+                clear: both;
             }
-            
-            li a.current {
-                background-color: #CD853F;
-                color: white;
-            }
-            li a:hover:not(.current) {
-                background-color: #CD853F;
-                color: white;
-            }
-            
             .nav-menu{
             
                 border: none; 
-                border: 0px;
+                border: 1px;
+                float: right;
+                background-color: #FFDAB9;
             }
             .nav-menu ul{
                 background-color: #FFDAB9;
                 list-style: none;
-                margine: 0;
+                margin: 0;
                 padding: 0;
+                padding-right: 20px;
+                
             } 
             
             .nav-menu li{
                 float: left;
-                padding: 0px;
+                padding: 0 15px;
+                line-height: 75px;
             }
             
             .nav-menu li a{
                 display: block;
                 background-color: #FFDAB9;
                 color: #000000;
-                padding: 8px;
+                padding: 0px;
                 text-decoration: none;
                 text-align: center;
                 font-weight: bold;
+                
             }
             
             .nav-menu li a:hover, .nav-menu ul li:hover a{
@@ -106,97 +108,43 @@
                 color:white;
                 text-decoration:none;  
             }
-        
-            
-            
-            
-            
-            
-            
-            #blogMenu ul ul{
-                display: none;
-            }      
-            
-            #blogMenu ul li:hover ul {
-                display: block;
-                
-                background-color: #5c5c5c;
-            }
-            
-            #blogMenu ul ul li{
-                float: none;
-            }
-               
+ 
         </style>
 
     </head>
     <body>
     	<header class="header">
-    		<div class="container-fluid">
-    			<div class="row">
-    				<div class="col-6 pl-0 pr-2 header-right"><!-- Start Logo Site-->
-    					<a href="/monitoring" class="logo d-flex align-item-center">
-    						<div class="logo_image">
-    							<img src="/resource/images/log_highway.png" alt="">
-    						</div>
-    						<div class="logo_title">
-    							<h1 class="site-title">GS Solar Energy Management System</h1>
-    								<p class="site-sub m-0">Log House Solar Power</p>
-    						</div>
-    					</a>
-    					<div id="eventPOPUPFrame" class="event-notification poisition-absolute d-flex justify-content-center align-items-center event-notification--orange">
-    						Event
-    					</div>
-    				</div><!-- End Logo Site -->
-    				<div class="col-6 pr-0 pl-2 header-left"><!-- Start Top Info -->
-    					<div class="top-header d-flex flex-row justify-content-end">
-    						<div class="date-time d-flex flex-wrap align-items-center">
-    							<p id="curDateKo" class="date-time--date">2020-01-28</p>
-    							<p id="curTime" class="date-time--time">10:00:00</p>
-    						</div>
-    						<div class="userLogin d-flex flex-wrap align-items-center">
-    							<a href="javascript:void(0)" class="account" style="cursor:default;">David</a>
-    							
-    							<form id="logOutForm" name="logOutForm" method="post">
-        							<a href="javascript:void(0)"  class="logout" data-fancybox="" data-src="#alert-detail_popup">
-        							Logout</a>
-    							</form>
-    						</div>
-    					</div><!-- End Top Info -->
-    					
-    					<nav class="nav-menu">
-    						<ul>
-    							<li class="menu-item"><a id="monitoring" href="/monitoring">Monitoring</a></li>
-    							<li class="menu-item"><a id="diagram" href="/diagram">Diagram</a></li>    							  
-								<li class="menu-item"><a id="operation" href="/operatoin">Operation</a></li>
-								<li class="menu-item"><a id="status" href="/status">Status</a>
-									<ul >
-										<li><a id="generatedStatus" href="/status/generated">Generation</a></li>
-										<li><a id="operationStatus" href="/status/operated">Operation</a></li>
-										<li><a id="equipmentStatus" href="/status/equipment">Equipment</a></li>
-										<li><a id="eventStatus" href="/status/equipment">Event</a></li>
-										<li><a id="equipmentStatus" href="/status/benefit">Benefit</a></li>
-										<li><a id="eventStatus" href="/status/operation">Operation</a></li>
-									</ul>
-								</li>
-								<li class="menu-item"><a id="management" href="/management">Management</a>								
-									<ul>
-										<li><a id="generatedStatus" href="/management/loginhistory">Login</a></li>
-										<li><a id="operationStatus" href="/management/user">User</a></li>
-										<li><a id="equipmentStatus" href="/management/setting">Setting</a></li>									
-									</ul>
-								</li>	 						    						 						
-    						</ul>    					
-    					</nav><!-- End Menu -->
-    							
-    					
-   					</div><!-- End Header Right -->
-    			</div>
-    		</div>
-    	
-    	</header>
-    	
-    	@yield('content')
+            <div class="warrper"> 
+                <h1>GS ENERGY MONITORING</h1>          
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="menu-item"><a id="monitoring" href="/monitoring">Monitoring</a></li>
+                        <li class="menu-item"><a id="diagram" href="/diagram">Diagram</a></li>    							  
+                        <li class="menu-item"><a id="operation" href="/operatoin">Operation</a></li>
+                        <li class="menu-item"><a id="status" href="/status">Status</a>
+                            <ul >
+                                <li><a id="generatedStatus" href="/status/generated">Generation</a></li>
+                                <li><a id="operationStatus" href="/status/operated">Operation</a></li>
+                                <li><a id="equipmentStatus" href="/status/equipment">Equipment</a></li>
+                                <li><a id="eventStatus" href="/status/equipment">Event</a></li>
+                                <li><a id="equipmentStatus" href="/status/benefit">Benefit</a></li>
+                                <li><a id="eventStatus" href="/status/operation">Operation</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a id="management" href="/management">Management</a>								
+                            <ul>
+                                <li><a id="generatedStatus" href="/management/loginhistory">Login</a></li>
+                                <li><a id="operationStatus" href="/management/user">User</a></li>
+                                <li><a id="equipmentStatus" href="/management/setting">Setting</a></li>									
+                            </ul>
+                        </li>	 						    						 						
+                    </ul>    					
+                </nav><!-- End Menu -->
+            </div>
+        </header>
+    	<section>
+            @yield('content')
+    	</section>
     	
     </body>
 </html>

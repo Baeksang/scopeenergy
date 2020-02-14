@@ -16,24 +16,33 @@ Route::get('/', function () {
 });
 
 Route::get('/monitoring', function(){
-    return view('monitoring');
+   return view('monitoring');
 });
 
+Route::get('/monitoring/index', 'MonitoringController@index');
+
+
+
 Route::get('/diagram',function(){
-    return view('diagram');   
+    $books = [
+        'Harry Potter',
+        'Laravel'
+    ];
+    return view('diagram',[
+        'books' => $books
+    ]);   
 });
 
 Route::get('/operation', function(){
     return view('operation');
 });
 
-Route::get('/status', function(){
-    return view('status');
+Route::get('/statics', function(){
+    return view('menu');
 });
 
-Route::get('/statics', function(){
-    return view('statics');
-});
+Route::get('/status', 'StatusController@index');
+
 
 Route::get('/management', function(){
     return view('management');
@@ -41,3 +50,14 @@ Route::get('/management', function(){
 
 
 Route::get('/projects', 'ProjectController@index');
+
+Route::get('/tasks','TaskController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

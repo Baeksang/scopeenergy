@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title')
 	Diagram
@@ -6,4 +6,11 @@
 
 @section('content')
 	Diagram
+
+	<ul>
+		@foreach($books as $book)
+			<li>{{ $book }}</li> 
+		@endforeach
+	</ul>
+	
 @endsection
