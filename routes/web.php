@@ -48,16 +48,16 @@ Route::get('/management', function(){
     return view('management');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/projects', 'ProjectController@index');
 
 Route::get('/tasks','TaskController@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
+Route::get('/tasks/create', 'TaskController@create');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -63,7 +63,7 @@
 					<canvas class="myChart"></canvas> 
 				</div> 
 				<div class="card-body text-center text-align-center"> 
-					<h3>Multi</h3> 
+					<h4>Multi</h4> 
 				</div> 
 			</div> 
 		</div> 
@@ -74,8 +74,8 @@
 				<div class="card-body"> 
 					<canvas class="myChart"></canvas> 
 				</div> 
-				<div class="card-body text- text-"> 
-					<h3>Pie</h3> 
+				<div class="card-body text-center text-algin-center"> 
+					<h4>Pie</h4> 
 				</div> 
 			</div> 
 		</div> 
