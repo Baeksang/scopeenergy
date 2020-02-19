@@ -27,7 +27,7 @@
                 @method('DELETE')
                 @csrf
                 <button class="btn btn-danger" type="">Delete</button>
-                
+              
             </form>
 
         </div>
