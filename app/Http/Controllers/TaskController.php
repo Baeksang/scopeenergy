@@ -10,7 +10,13 @@ class TaskController extends Controller
     // 
 
     public function index(){
-        return view('tasks.index');
+
+        //$tasks = Task::all();
+        $tasks = Task::latest()->get();
+
+        return view('tasks.index',[
+            'tasks' => $tasks
+        ]);
     }
 
     public function create(){
@@ -19,9 +25,27 @@ class TaskController extends Controller
 
     public function store(Request $request){
 
-        Task::create([
-            'projectid'         => $request->input('projectid'),
+        
+        // field 값이 null 인지 아닌지 확인한다. 
+        request()->validate([
+
+            'projectname'       => 'required',
+            'projectid'         => 'required',
+            'customername'      => 'required',
+            'customercontact'   => 'required',
+            'customerphone'     => 'required',
+            'address1'          => 'required',
+            'address2'          => 'required',
+            'address3'          => 'required',
+            'kepcoid'           => 'required',
+            'businessmodel'     => 'required'
+            
+        ]);
+
+        $task = Task::create([
+            // $request->input() = request()
             'projectname'       => $request->input('projectname'),
+            'projectid'         => $request->input('projectid'),
             'customername'      => $request->input('customername'),
             'customercontact'   => $request->input('customercontact'),
             'customerphone'     => $request->input('customerphone'),
@@ -34,6 +58,49 @@ class TaskController extends Controller
 
 
         ]);
+
+        return redirect('/tasks');
+
+        //return redirect('/tasks/'.$task->id);
+    }
+
+    public function show(Task $task){
+
+        return view('tasks.show',[
+            'task' => $task
+        ]);
+    }
+
+    public function edit(Task $task){
+
+        return view('tasks.edit',[
+            'task' => $task
+
+        ]);
+    }
+
+    public function update(Task $task){
+
+        
+        $task->update([
+            'projectid'         => request('projectid'),
+            'projectname'       => request('projectname'),
+            'customername'      => request('customername'),
+            'customercontact'   => request('customercontact'),
+            'customerphone'     => request('customerphone'),
+            'address1'          => request('address1'),
+            'address2'          => request('address2'),
+            'address3'          => request('address3'),
+            'kepcoid'           => request('kepcoid'),
+            'businessmodel'     => request('businessmodel'),
+            'building'          => request('building')
+        ]);
+        return redirect('/tasks/'.$task->id);
+    }
+
+    public function destroy(Task $task){
+
+        $task->delete();
 
         return redirect('/tasks');
     }
