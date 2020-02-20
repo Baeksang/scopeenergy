@@ -23,7 +23,7 @@
             <a href="/tasks/create">
                 <button class="btn btn btn-success" type="">Create</button>
             </a>
-                    </div>
+        </div>
     </div>
    
     <ul>
@@ -37,8 +37,43 @@
             </a>
         @endforeach
     </ul>
+
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+    <button class="btn btn-default">글쓰기</button>
+    <nav aria-label="Page navigation example" >
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+            </li>
+        </ul>
+    </nav>
 </div>
-
-
-
 @endsection

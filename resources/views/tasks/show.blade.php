@@ -16,12 +16,12 @@
 
 @section('content')
 
-<div class="container mx-auto">
+<div class="container">
     <div class="d-flex">
-        <h1 class="font-weight-bold text-3xl d-flex">수용가 정보</h1>
-        <div class="col text-right">
+        <h1 class="font-weight-bold text-3xl d-flex float-right">수용가 정보</h1>
+        <div class="col float-right">
             <a href="/tasks/{{ $task->id }}/edit">
-                <button class="btn btn-primary" type="">Edit</button>
+                <button class="btn btn-primary pull-right" type="">Edit</button>
             </a>
             <form method="POST" action="/tasks/{{ $task->id }}" class="float-right ml-2">
                 @method('DELETE')

@@ -16,18 +16,20 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('projectname')->Nullable();
-            $table->string('projectid')->Nullable();
-            $table->string('customername')->Nullable();
-            $table->string('customercontact')->Nullable();
-            $table->string('customerphone')->Nullable();
-            $table->string('address1')->Nullable();
-            $table->string('address2')->Nullable();
-            $table->string('address3')->Nullable();
-            $table->string('kepcoid')->Nullable();
-            $table->string('businessmodel')->Nullable();
+            $table->string('projectname');
+            $table->string('projectid');
+            $table->string('customername');
+            $table->string('customercontact');
+            $table->string('customerphone');
+            $table->string('address1');
+            $table->string('address2');
+            $table->string('address3');
+            $table->string('kepcoid');
+            $table->string('businessmodel');
             $table->string('building')->Nullable();
             $table->timestamps();
+
+            //$table->foreign('user_id')->references('id')->on('users');
         });
     }
 

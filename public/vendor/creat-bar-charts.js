@@ -6,7 +6,7 @@
         },
     
         ajaxGetWeeklyPowerData: function(){
-            var urlPath = '/monitoring/index';
+            var urlPath = '/monitoring/weekpower';
             var request = $.ajax( {
                 method: 'GET',
                 url: urlPath
@@ -55,7 +55,7 @@
                    },
                    options: { 
                        // responsive, its default value is true. If you want to resize the canvas, it should be "true"
-                       responsive: true,   // false to resize a canvas
+                       //responsive: false,   // false to resize a canvas
                        scales: { 
                            yAxes: [{ 
                                ticks: { 

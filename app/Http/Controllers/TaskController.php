@@ -7,9 +7,20 @@ use App\Task;
 
 class TaskController extends Controller
 {
-    // 
+    // Indexing DB Task 
 
     public function index(){
+
+        //$tasks = Task::all();
+        $tasks = Task::latest()->get();
+
+        return view('tasks.index',[
+            'tasks' => $tasks
+        ]);
+    }
+
+    // Indexing DB AAA
+    public function aaaindex(){
 
         //$tasks = Task::all();
         $tasks = Task::latest()->get();
@@ -24,7 +35,6 @@ class TaskController extends Controller
     }
 
     public function store(Request $request){
-
         
         // field 값이 null 인지 아닌지 확인한다. 
         request()->validate([
@@ -56,11 +66,9 @@ class TaskController extends Controller
             'businessmodel'     => $request->input('businessmodel'),
             'building'          => $request->input('building')
 
-
         ]);
 
         return redirect('/tasks');
-
         //return redirect('/tasks/'.$task->id);
     }
 
@@ -75,13 +83,11 @@ class TaskController extends Controller
 
         return view('tasks.edit',[
             'task' => $task
-
         ]);
     }
 
     public function update(Task $task){
-
-        
+       
         $task->update([
             'projectid'         => request('projectid'),
             'projectname'       => request('projectname'),
@@ -95,6 +101,7 @@ class TaskController extends Controller
             'businessmodel'     => request('businessmodel'),
             'building'          => request('building')
         ]);
+
         return redirect('/tasks/'.$task->id);
     }
 
