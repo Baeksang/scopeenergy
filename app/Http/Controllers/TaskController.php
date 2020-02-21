@@ -12,24 +12,16 @@ class TaskController extends Controller
     public function index(){
 
         //$tasks = Task::all();
-        $tasks = Task::latest()->get();
+        //$tasks = Task::latest()->get();
+        $tasks = Task::latest()->paginate(1);
+        //$tasks = Task::orderBy('created_at','desc')->paginate(1);
 
         return view('tasks.index',[
             'tasks' => $tasks
         ]);
     }
 
-    // Indexing DB AAA
-    public function aaaindex(){
-
-        //$tasks = Task::all();
-        $tasks = Task::latest()->get();
-
-        return view('tasks.index',[
-            'tasks' => $tasks
-        ]);
-    }
-
+   
     public function create(){
         return view('tasks.create');
     }

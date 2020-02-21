@@ -73,7 +73,7 @@
                const mydataHalf = [5, 10, 20, 7];
    
                var ctx = document.getElementsByClassName("myChart");
-   
+               
                var mixedChart = {
                    type: 'bar',
                    //labels: [
@@ -102,6 +102,8 @@
                    type: 'bar',
                    data: mixedChart,
                    options: {
+                       // 차트 크기 조절을 위해 차트 옵션에 responsive: false 를 추가시켜 준다.
+                       responsive: false,   // false to resize a canvas
                        legend: {
                            display: true
                        }
