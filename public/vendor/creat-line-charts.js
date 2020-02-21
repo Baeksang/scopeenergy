@@ -2,10 +2,10 @@
 
     var charts = {
         init: function () {
-            this.ajaxGetWeeklyPowerData();
+            this.ajaxGetdayPowerData();
         },
     
-        ajaxGetWeeklyPowerData: function(){
+        ajaxGetdayPowerData: function(){
             var urlPath = '/monitoring/daypower';
             var request = $.ajax( {
                 method: 'GET',
@@ -24,33 +24,48 @@
         createCompleteJobsChart: function(response){
 
                /* bar chart - Start */
-               var ctx = document.getElementById('dayPower').getContext('2d');
-               var dayPower = new Chart(ctx, {
+               var ctx1 = document.getElementById("dayPower");
+               var ctx2 = ctx1.getContext("2d");
+               var dayPower = new Chart(ctx2, {
                    type: 'line',
                    data: {
-                       labels: response.weeks,
+                       labels: response.day,
                        datasets: [{
                            label: 'Day Power',
-                           data: response.data,
+                           data: response.daypower,
                            backgroundColor: 'transparent',
                            borderColor: 'rgba(255, 99, 132, 1)',
                            borderWidth: 3
                        }]
                    },
                    options: { 
-                       // responsive, its default value is true. If you want to resize the canvas, it should be "true"
-                       //responsive: true,   // false to resize a canvas
-                       //scales: { 
-                       //    yAxes: [{ 
-                       //        ticks: { 
-                       //            beginAtZero: true 
-                       //        }
-                       //    }]
-                       //},
-                       title : {
-                           display : true,
-                           text : '라인차트 제목'
-                       }
+                       // 차트 크기 조절을 위해 차트 옵션에 responsive: false 를 추가시켜 준다.
+                       //responsive: false,   // false to resize a canvas
+                       scales: { 
+                           yAxes: [{ 
+                               ticks: { 
+                                    //beginAtZero: true,
+                                    min: 0,
+                                    max: 30,
+                                    maxTicksLimit: 5                                   
+                               }
+                           }],
+                           xAxes: [{
+                               time : {
+                                   unit: 'date'
+                               },
+                               guideLines: {
+                                   display: false
+                               },
+                               ticks:{
+                                   maxTicksLimit: 7
+                               }
+                           }]
+                       },
+                       //title : {
+                       //    display : true,
+                       //    text : '라인차트 제목'
+                       //}
                    }
                }); 
                /* line chart - End */

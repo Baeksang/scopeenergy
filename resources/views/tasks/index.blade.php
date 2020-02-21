@@ -18,12 +18,7 @@
 
 <div class="container mx-auto">
     <div class="d-flex">
-        <h1 class="font-weight-bold text-3xl d-flex">수용가 정보</h1>
-        <div class="col text-right">
-            <a href="/tasks/create">
-                <button class="btn btn btn-success" type="">Create</button>
-            </a>
-        </div>
+        <h1 class="font-weight-bold text-3xl d-flex">수용가 정보</h1>       
     </div>
    
     <ul>
@@ -37,8 +32,14 @@
             </a>
         @endforeach
     </ul>
+    <div class="float-center">
+        {!! $tasks->render() !!}
+    </div>
 
-    <table class="table table-hover">
+    
+
+    <div class="table-responsive-sm">
+    <table class="table">
         <thead class="thead-light">
             <tr>
                 <th scope="col">번호</th>
@@ -56,8 +57,15 @@
             </tr>
         </tbody>
     </table>
+    </div>
     <hr/>
-    <button class="btn btn-default">글쓰기</button>
+    
+    <div class="col text-right">
+            <a href="/tasks/create">
+                <button class="btn btn btn-success" type="">Create</button>
+            </a>
+    </div>
+
     <nav aria-label="Page navigation example" >
         <ul class="pagination justify-content-center">
             <li class="page-item">
