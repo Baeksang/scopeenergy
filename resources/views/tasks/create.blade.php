@@ -16,7 +16,7 @@
 
 @section('content')
     <div class="container">
-        <form class="form-horizontal" role="form" method="post" action="/tasks">   
+        <form class="form-horizontal" role="form" method="post" action="/tasks">
         <!-- <form class="form-horizontal" role="form" method="post" action="javascript:alert( 'success!' );"> -->
             @csrf
 <!--
@@ -59,25 +59,25 @@
 -->
             <div class="form-group" id="divProjectName" >
             <!--<div class="form-group" id="divProjectName" style="display:flex;"> -->
-                <label for="inputProjectName" class="col-lg-2">Project Name</label>
+                <label for="inputProjectName" class="col-lg-2 control-label">Project Name</label>
                 <!-- <label for="inputProjectName" class="col-lg-2 control-label">Project Name</label> -->
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control onlyAlphabetAndNumber @error('projectname') border border-danger @enderror " 
-                    required value="{{ old('projectname') ? old('projectname') : ''}}" id="projectname" name="projectname" 
+                    <input type="text" class="form-control onlyAlphabetAndNumber @error('ProjectName') border border-danger @enderror"
+                    value="{{ old('ProjectName') ? old('ProjectName') : ''}}" id="ProjectName" name="ProjectName"
                     data-rule-required="true" placeholder="Project Name" maxlength="">
-                    @error('projectname')
-                        <small class="text-danger">{{ $message }}</small>
+                    @error('ProjectName')
+                        <small class="text-danger m-2">{{ $message }}</small>
                     @enderror
                 </div>
-            </div>            
+            </div>
             <div class="form-group" id="divProjectId">
-                <label for="inputprojectId" class="col-lg-2 control-label">Project ID</label>
+                <label for="inputProjectId" class="col-lg-2 control-label">Project ID</label>
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control onlyAlphabetAndNumber @error('projectid') border border-danger @enderror" 
-                    required value=" {{ old('projecid') ? old('projecid') : '' }} " id="projectid" name="projectid" 
+                    <input type="text" class="form-control onlyAlphabetAndNumber @error('projectid') border border-danger @enderror"
+                    required value=" {{ old('projecid') ? old('projecid') : '' }} " id="projectid" name="projectid"
                     data-rule-required="true" placeholder="Project ID " maxlength="">
                     @error('projectid')
-                        <small class="text-danger">{{ $message }}</small>
+                        <small class="text-danger m-2">{{ $message }}</small>
                     @enderror
                 </div>
             </div>
@@ -165,7 +165,7 @@
                     <button type="submit" class="btn btn-primary text-white" value="submit" >Submit</button>
                 </div>
             </div>
-        
+
         </form>
         <!-- @if($errors->any())  {{ $errors }}  @endif -->
 </div>
