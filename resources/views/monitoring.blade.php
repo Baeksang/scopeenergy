@@ -42,8 +42,12 @@
 
 		-->
 
+		<script src="{{ url('vendor/creat-area-charts.js') }}"></script>
 		<script src="{{ url('vendor/creat-bar-charts.js') }}"></script>
 		<script src="{{ url('vendor/creat-line-charts.js') }}"></script>
+		<script src="{{ url('vendor/creat-pie-charts.js') }}"></script>
+		<script src="{{ url('vendor/creat-doughnut-charts.js') }}"></script>
+		<script src="{{ url('vendor/creat-gauge-charts.js') }}"></script>
 
 @endsection
 
@@ -66,7 +70,7 @@
 		</div>
 		<div class="card mb-4">
 			<div class="card-header"><i class="fas fa-chart-area mr-1"></i>Area Chart Example</div>
-			<div class="card-body"><canvas id="myChart" width="100vw" height="30vh"></canvas></div>
+			<div class="card-body"><canvas id="myChart" width="100vw" height="50vh"></canvas></div>
 			<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 		</div>
 		<div class="row">
@@ -88,8 +92,8 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="card mb-4">
-					<div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Bar Chart Example</div>
-					<div class="card-body"><canvas id="myBarChart" width="50vw" height="30vh"></canvas></div>
+					<div class="card-header"><i class="fas fa-chart-pie mr-1"></i>설비 용량</div>
+					<div class="card-body"><canvas id="myDoughnutChart" width="50vw" height="30vh"></canvas></div>
 					<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 				</div>
 			</div>
@@ -101,116 +105,29 @@
 				</div>
 			</div>
 		</div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header"><i class="fas fa-chart-pie mr-1"></i>현재 전력</div>
+                    <div class="card-body"><canvas id="myGaugeChart" width="50vw" height="30vh"></canvas></div>
+                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header"><i class="fas fa-chart-pie mr-1"></i>금일 발전량</div>
+                    <div class="card-body"><canvas id="myTodayPowerChart" width="50vw" height="30vh"></canvas></div>
+                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header"><i class="fas fa-chart-pie mr-1"></i>변환 효율</div>
+                    <div class="card-body"><canvas id="myTRatioChart" width="50vw" height="30vh"></canvas></div>
+                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                </div>
+            </div>
+        </div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-	<div>
-			<canvas id="weekPower" style="height: 30vh; width: 50vw"></canvas>
-	</div>
-	<!-- <div>
-			<canvas id="dayPower"></canvas>
-	</div> -->
-	<div class="row my-3">
-		<div class="col">
-			<h4>태양광 발전 현황</h4>
-		</div>
-	</div>
-	<div class="row my-2">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<canvas class="myChart"></canvas>
-				</div>
-				<div class="card-body text-center text-align-center">
-					<h4>Multi</h4>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row my-2">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-body">
-					<canvas class="dayPower"></canvas>
-				</div>
-				<div class="card-body text-center text-algin-center">
-					<h4>Pie</h4>
-				</div>
-			</div>
-		</div>
-=======
-
-
-
-<div>
-			<canvas id="weekPower"></canvas> 
-		
-
-	</div>
-	 <div>
-			<canvas id="dayPower" style="width:50vw; height:30vh" ></canvas> 
-	</div> 
-	<div class="row my-3"> 
-		<div class="col"> 
-			<h4>태양광 발전 현황</h4> 
-		</div> 
-	</div> 
-	<div class="row my-2"> 
-		<div class="col-md-6"> 
-			<div class="card"> 
-				<div class="card-body"> 
-					<canvas class="myChart"></canvas> 
-				</div> 
-				<div class="card-body text-center text-align-center"> 
-					<h4>Multi</h4> 
-				</div> 
-			</div> 
-		</div> 
-	</div> 	
-	<div class="row my-2"> 
-		<div class="col-md-6"> 
-			<div class="card"> 
-				<div class="card-body"> 
-					<canvas class="dayPower"></canvas> 
-				</div> 
-				<div class="card-body text-center text-algin-center"> 
-					<h4>Pie</h4> 
-				</div> 
-			</div> 
-		</div> 
->>>>>>> 77a53375e7a71d84aacdb0d28df73f0250be9754
-	</div>
-
-
-
-
-
-
-
-
-	
-
 </div>
-
-
-
 @endsection
-
-
-
