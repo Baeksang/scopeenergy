@@ -16,7 +16,7 @@
 
 @section('content')
     <div class="container">
-        <form class="form-horizontal" role="form" method="post" action="/tasks">   
+        <form class="form-horizontal" role="form" method="post" action="/tasks">
         <!-- <form class="form-horizontal" role="form" method="post" action="javascript:alert( 'success!' );"> -->
             @csrf
 <!--
@@ -59,32 +59,32 @@
 -->
             <div class="form-group" id="divProjectName" >
             <!--<div class="form-group" id="divProjectName" style="display:flex;"> -->
-                <label for="inputProjectName" class="col-lg-2">Project Name</label>
+                <label for="inputProjectName" class="col-lg-2 control-label">Project Name</label>
                 <!-- <label for="inputProjectName" class="col-lg-2 control-label">Project Name</label> -->
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control onlyAlphabetAndNumber @error('projectname') border border-danger @enderror " 
-                    required value="{{ old('projectname') ? old('projectname') : ''}}" id="projectname" name="projectname" 
+                    <input type="text" class="form-control onlyAlphabetAndNumber @error('ProjectName') border border-danger @enderror"
+                    value="{{ old('ProjectName') ? old('ProjectName') : ''}}" id="ProjectName" name="ProjectName"
                     data-rule-required="true" placeholder="Project Name" maxlength="">
-                    @error('projectname')
-                        <small class="text-danger">{{ $message }}</small>
+                    @error('ProjectName')
+                        <small class="text-danger m-2">{{ $message }}</small>
                     @enderror
                 </div>
-            </div>            
+            </div>
             <div class="form-group" id="divProjectId">
-                <label for="inputprojectId" class="col-lg-2 control-label">Project ID</label>
+                <label for="inputProjectId" class="col-lg-2 control-label">Project ID</label>
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control onlyAlphabetAndNumber @error('projectid') border border-danger @enderror" 
-                    required value=" {{ old('projecid') ? old('projecid') : '' }} " id="projectid" name="projectid" 
+                    <input type="text" class="form-control onlyAlphabetAndNumber @error('projectid') border border-danger @enderror"
+                    value=" {{ old('projectid') ? old('projectid') : '' }} " id="projectid" name="projectid"
                     data-rule-required="true" placeholder="Project ID " maxlength="">
                     @error('projectid')
-                        <small class="text-danger">{{ $message }}</small>
+                        <small class="text-danger m-2">{{ $message }}</small>
                     @enderror
                 </div>
             </div>
             <div class="form-group" id="divCustomerName">
                 <label for="inputCustomerName" class="col-lg-2 control-label">고객명</label>
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control @error('customername') border border-danger @enderror" required value=" {{ old('customername') ? old('customername') : '' }} " id="customername" name="customername" data-rule-required="true" placeholder="고객명" maxlength="30">
+                    <input type="text" class="form-control @error('customername') border border-danger @enderror" value=" {{ old('customername') ? old('customername') : '' }} " id="customername" name="customername" data-rule-required="true" placeholder="고객명" maxlength="30">
                     @error('customername')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -139,7 +139,7 @@
             <div class="form-group" id="divKepcoID">
                 <label for="inputKepcoID" class="col-lg-2 control-label">한전 ID</label>
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control @error('kepcoid') border border-danger @enderror" required value=" {{ old('kepcoid') ? old('kepcoid') : '' }} " id="kepcoid" name="kepcoid" data-rule-required="true" placeholder="한국 전력에서 제공하는 고객번호" maxlength="15">
+                    <input type="text" class="form-control @error('kepcoid') border border-danger @enderror" value=" {{ old('kepcoid') ? old('kepcoid') : '' }} " id="kepcoid" name="kepcoid" data-rule-required="true" placeholder="한국 전력에서 제공하는 고객번호" maxlength="15">
                     @error('kepcoid')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -148,7 +148,7 @@
             <div class="form-group" id="divBusinessModel">
                 <label for="inputBusinessModel" class="col-lg-2 control-label">해당 사업 형태</label>
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control @error('businessmodel') border border-danger @enderror" required value=" {{ old('businessmodel') ? old('businessmodel') : '' }} " id="businessmodel" name="businessmodel" data-rule-required="true" placeholder="사업 유형에 따른 분류" maxlength="15">
+                    <input type="text" class="form-control @error('businessmodel') border border-danger @enderror" value=" {{ old('businessmodel') ? old('businessmodel') : '' }} " id="businessmodel" name="businessmodel" data-rule-required="true" placeholder="사업 유형에 따른 분류" maxlength="15">
                     @error('businessmodel')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -157,7 +157,7 @@
             <div class="form-group" id="divBuilding">
                 <label for="inputBuilding" class="col-lg-2 control-label">건물 형태</label>
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control" required value=" {{ old('building') ? old('building') : '' }} " id="building" name="building" data-rule-required="true" placeholder="건축물 상부에 설치될 경우" maxlength="15">
+                    <input type="text" class="form-control" value=" {{ old('building') ? old('building') : '' }} " id="building" name="building" data-rule-required="true" placeholder="건축물 상부에 설치될 경우" maxlength="15">
                 </div>
             </div>
             <div class="form-group">
@@ -165,7 +165,7 @@
                     <button type="submit" class="btn btn-primary text-white" value="submit" >Submit</button>
                 </div>
             </div>
-        
+
         </form>
         <!-- @if($errors->any())  {{ $errors }}  @endif -->
 </div>

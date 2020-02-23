@@ -5,12 +5,17 @@
 @endsection
 
 @section('content')
-	Diagram
 
-	<ul>
-		@foreach($books as $book)
-			<li>{{ $book }}</li> 
-		@endforeach
-	</ul>
-	
+    <div class="container">
+
+        <ul>Diagram</ul>
+
+        <ul>
+            @foreach($books as $book)
+                <li>{{ $book }}</li>
+            @endforeach
+        </ul>
+    </div>
+
+
 @endsection
