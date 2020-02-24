@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/totalstatus', function(){
+    return view('totalstatus');
+});
+
 Route::get('/monitoring', function(){
    return view('monitoring');
 });
@@ -23,15 +27,13 @@ Route::get('/monitoring/weekpower', 'MonitoringController@getWeekPowerInformatio
 Route::get('/monitoring/daypower', 'MonitoringController@getDayPowerInformation');
 
 
-Route::get('/diagram',function(){
-    $books = [
-        'Harry Potter',
-        'Laravel'
-    ];
-    return view('diagram',[
-        'books' => $books
-    ]);   
+Route::get('/status',function(){
+   
+    return view('status');   
 });
+
+Route::get('/status/weekpower', 'MonitoringController@getWeekPowerInformation');
+Route::get('/status/daypower', 'MonitoringController@getDayPowerInformation');
 
 Route::get('/operation', function(){
     return view('operation');
@@ -40,8 +42,6 @@ Route::get('/operation', function(){
 Route::get('/statics', function(){
     return view('menu');
 });
-
-Route::get('/status', 'StatusController@index');
 
 
 Route::get('/management', function(){

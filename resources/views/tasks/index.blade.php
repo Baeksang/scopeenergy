@@ -5,6 +5,19 @@
 
 @section('script')
 
+    <!-- CDN Link -->
+    <script  src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+
+
 @endsection
 
 
@@ -17,14 +30,9 @@
 @section('content')
 
 <div class="container mx-auto">
-    <div class="d-flex">
 
-        <h1 class="font-weight-bold text-3xl d-flex">수용가 정보</h1>
-
-    </div>
-
-    <ul>
-        <!-- {{ $tasks }} -->
+<!--    <ul>
+    
         @foreach($tasks as $task)
             <a href="/tasks/{{ $task->id}}">
                 <li class="border my-3 p-3">Project ID : {{ $task->projectid }}
@@ -34,44 +42,72 @@
             </a>
         @endforeach
     </ul>
+-->
+        <!-- {!! $tasks->render() !!} -->
 
-        {!! $tasks->render() !!}
-
-
-
-
-
-    <div class="table-responsive-sm">
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">번호</th>
-                <th scope="col">제목</th>
-                <th scope="col">작성자</th>
-                <th scope="col">등록일</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-    <hr/>
-
-
+    
+        <div class="card mb-4"> 
+            <div class="card-header"><i class="fas fa-table mr-2"></i> 수용가 정보</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Project ID</th>
+                                <th>Project Name</th>
+                                <th>Create At</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>No</th>
+                                <th>Project ID</th>
+                                <th>Project Name</th>
+                                <th>Create At</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                        </tfoot>
+                        
+                        <tbody>
+                        @foreach($tasks as $task)
+                                <a href="/tasks/{{ $task->id }}">  
+                            <tr>
+                                
+                                <td>{{ $task->id }}</td>
+                                <td>{{ $task->projectid}}</td>
+                                <td>{{ $task->projectname}}</td>
+                                <td>{{ $task->created_at}}</td>
+                                <td>2011/04/25</td>
+                                <td>$320,800</td>
+                               
+                            </tr>
+                            </a>
+                            @endforeach
+                        </tbody>
+                       
+                       
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    
+    
     <div class="col text-right">
         <a href="/tasks/create">
             <button class="btn btn btn-success" type="">Create</button>
         </a>
     </div>
 
-
-    <!-- <button class="btn btn-default">글쓰기</button> -->
+    <!-- {!! $tasks->render() !!} -->
+    
+    <!-- <button class="btn btn-default">글쓰기</button> 
 
     <nav aria-label="Page navigation example" >
         <ul class="pagination justify-content-center">
@@ -89,6 +125,6 @@
             </a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
 </div>
 @endsection
