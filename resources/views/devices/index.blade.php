@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-	Task
+	발전원 설치 정보
 @endsection
 
 @section('script')
@@ -30,23 +30,8 @@
 @section('content')
 
 <div class="container mx-auto">
-
-    <!--<ul>
-         @foreach($tasks as $task)
-            <a href="/tasks/{{ $task->id}}">
-                <li class="border my-3 p-3">Project ID : {{ $task->projectid }}
-                    <small class="float-right">Created at {{ $task->created_at }}</small><br>
-                    <small class="float-right">Updated at {{ $task->updated_at }}</small><br>
-                </li>
-            </a>
-        @endforeach
-    </ul>
-    -->
-    
-
-   
         <div class="card mb-4"> 
-            <div class="card-header"><i class="fas fa-table mr-2"></i> 수용가 정보</div>
+            <div class="card-header"><i class="fas fa-table mr-2"></i> 발전원 설치 정보</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -72,20 +57,18 @@
                         </tfoot>
                         
                         <tbody>
-                        @foreach($tasks as $task)
-                                <a href="/tasks/{{ $task->id }}">  
+                      
                             <tr>
                                 
-                                <td>{{ $task->id }}</td>
-                                <td>{{ $task->projectid}}</td>
-                                <td>{{ $task->projectname}}</td>
-                                <td>{{ $task->created_at}}</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
                                 <td>2011/04/25</td>
                                 <td>$320,800</td>
                                
                             </tr>
-                            </a>
-                            @endforeach
+                         
                         </tbody>
                        
                        

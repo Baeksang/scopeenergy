@@ -55,6 +55,21 @@ Auth::routes();
 Route::get('/projects', 'ProjectController@index');
 
 
+
+/* Device group : 발전설비재원 관리*/
+Route::prefix('devices')->group(function(){
+   
+    Route::get('/','DeviceController@index');
+    //Route::get('/create', 'DeviceController@create');
+    //Route::post('/','DeviceController@store');
+   // Route::get('/{device}', 'DeviceController@show');
+    //Route::get('/{device}/edit', 'DeviceController@edit');
+    //Route::put('/{device}', 'DeviceController@update');
+    //Route::delete('/{device}', 'DeviceController@destroy');
+
+});
+
+/* Task group  : 수용가 정보 관리 */
 Route::prefix('tasks')->group(function(){
    
     Route::get('/','TaskController@index');

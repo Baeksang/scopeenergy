@@ -8,7 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', '') }}</title>
+    <!-- <title>{{ config('app.name', '') }}</title> -->
+    <title>@yield('title', 'monitoring')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -58,7 +59,7 @@
                             <div class="dropdown-menu">
                                 <div class="dropdown-header">입력데이터</div>
                                     <a class="dropdown-item" href="/tasks">수용가 정보</a>
-                                    <a class="dropdown-item" href="/tasks/create">발전원 설치정보</a>
+                                    <a class="dropdown-item" href="/devices">발전원 설치정보</a>
                                     <a class="dropdown-item" href="#">발전설비재원</a>
                                 <div class="dropdown-header">액션모음</div>
                                     <a class="dropdown-item" href="#" target="_blank">Link 1</a>

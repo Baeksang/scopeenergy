@@ -58,24 +58,24 @@
             </div>
 -->
             <div class="form-group" id="divProjectName" >
-            <!--<div class="form-group" id="divProjectName" style="display:flex;"> -->
-                <label for="inputProjectName" class="col-lg-2 control-label">Project Name</label>
-                <!-- <label for="inputProjectName" class="col-lg-2 control-label">Project Name</label> -->
+                
+                    <label for="inputProjectName" class="col-lg-2 control-label">Project Name</label>
+                   
                 <div class="col-lg-10 float-right">
-                    <input type="text" class="form-control onlyAlphabetAndNumber @error('ProjectName') border border-danger @enderror"
-                    value="{{ old('ProjectName') ? old('ProjectName') : ''}}" id="ProjectName" name="ProjectName"
+                    <input type="text" class="form-control onlyAlphabetAndNumber @error('projectName') border border-danger @enderror"
+                    value="{{ old('projectname') ? old('projectname') : ''}}" id="projectname" name="projectname"
                     data-rule-required="true" placeholder="Project Name" maxlength="">
-                    @error('ProjectName')
+                    @error('projectname')
                         <small class="text-danger m-2">{{ $message }}</small>
                     @enderror
                 </div>
             </div>
-            <div class="form-group" id="divProjectId">
+            <div class="form-group " id="divProjectId">
                 <label for="inputProjectId" class="col-lg-2 control-label">Project ID</label>
-                <div class="col-lg-10 float-right">
+                <div class="col-lg-10 float-right ">
                     <input type="text" class="form-control onlyAlphabetAndNumber @error('projectid') border border-danger @enderror"
                     value=" {{ old('projectid') ? old('projectid') : '' }} " id="projectid" name="projectid"
-                    data-rule-required="true" placeholder="Project ID " maxlength="">
+                    data-rule-required="true" placeholder="Project ID" maxlength="">
                     @error('projectid')
                         <small class="text-danger m-2">{{ $message }}</small>
                     @enderror
