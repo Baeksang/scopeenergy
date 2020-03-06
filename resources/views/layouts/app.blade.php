@@ -48,8 +48,8 @@
                         <li class="nav-item active"><a class="nav-link" href="#">GS Energy Monitoring System<span class="sr-only">
                         (current)</span></a></li>
                         <li class="nav-item"><a class="nav-link" href="/totalstatus">종합감시</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/status">발전현황</a></li>                        
-                        <li class="nav-item"><a class="nav-link" href="/monitoring">모니터링</a></li>                        
+                        <li class="nav-item"><a class="nav-link" href="/status">발전현황</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/monitoring">모니터링</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">계통도</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">통계</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">경보</a></li>
@@ -101,6 +101,9 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ route('admin.users.index') }}">
+                                        User Management
+                                    </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

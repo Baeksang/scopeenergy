@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.layoutside')
+
 @section('title')
 	종합감시
 @endsection
@@ -54,10 +55,6 @@
 
 
 @section('content')
-
-<div class="container" >
-
-
 
 <div class="container-fluid">
 
@@ -133,6 +130,8 @@
 			<div class="card-body"><canvas id="myChart" width="100vw" height="50vh"></canvas></div>
 			<!-- div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
 		</div>
+
+
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="card mb-4">
@@ -149,6 +148,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="card mb-4">
@@ -167,5 +167,5 @@
 		</div>
 
 	</div>
-</div>
+
 @endsection

@@ -28,8 +28,8 @@ Route::get('/monitoring/daypower', 'MonitoringController@getDayPowerInformation'
 
 
 Route::get('/status',function(){
-   
-    return view('status');   
+
+    return view('status');
 });
 
 Route::get('/status/weekpower', 'MonitoringController@getWeekPowerInformation');
@@ -58,7 +58,7 @@ Route::get('/projects', 'ProjectController@index');
 
 /* Device group : 발전설비재원 관리*/
 Route::prefix('devices')->group(function(){
-   
+
     Route::get('/','DeviceController@index');
     //Route::get('/create', 'DeviceController@create');
     //Route::post('/','DeviceController@store');
@@ -71,7 +71,7 @@ Route::prefix('devices')->group(function(){
 
 /* Task group  : 수용가 정보 관리 */
 Route::prefix('tasks')->group(function(){
-   
+
     Route::get('/','TaskController@index');
     Route::get('/create', 'TaskController@create');
     Route::post('/','TaskController@store');
@@ -79,5 +79,11 @@ Route::prefix('tasks')->group(function(){
     Route::get('/{task}/edit', 'TaskController@edit');
     Route::put('/{task}', 'TaskController@update');
     Route::delete('/{task}', 'TaskController@destroy');
+
+});
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+
+    Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
 
 });
