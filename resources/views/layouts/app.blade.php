@@ -53,6 +53,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">계통도</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">통계</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">경보</a></li>
+                        @can('manage-users')
                         <li class="nav-item dropdown">
                             <!-- 드롭다운 메뉴 -->
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">관리</a>
@@ -67,6 +68,7 @@
                                     <a class="dropdown-item" href="#">Link 2</a>
                             </div>
                         </li>
+                        @endcan
                     </ul>
                     <!-- Search -->
                     <!-- <form class="form-inline" action=""> -->
@@ -100,10 +102,11 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    @can('manage-users')
                                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                         User Management
                                     </a>
+                                    @endcan
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -116,11 +119,15 @@
         </nav>
 
         <main class="py-4">
-
+            <div class="container">
+                @include('partials.alert')
+                @yield('content')
+            </div>
+            
         </main>
 
     </div>
-    @yield('content')
+    
     @yield('js')
 </body>
 </html>

@@ -1,4 +1,4 @@
-@extends('layouts.layoutside')
+@extends('layouts.app')
 
 @section('title')
 	종합감시
